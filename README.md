@@ -51,3 +51,8 @@ Sağlama (Provisioning) – Süreci otomatikleştirmemize ve yönetmemize yardı
 
 ### Süreci yapılandırmak, yönetmek, otomatikleştirmek ve düzenlemek için yazılmış bir Envanter tablosu, API, Eklentiler ve modüllerden oluşur.
 Ağ oluşturmayı ana bilgisayarları veya sunucuları, işletim sistemlerini yönetmek ve güvenliği yönetmek için Playbook yazılımından, genel/özel buluttan ve yapılandırma yönetimi veritabanlarından girdi alabilir.
+
+## INVENTORY
+### MEVCUTTA KULLANLAN TĞM SUNCULARIN IP ADRESLERİNİ GİRECEĞİZ.
+![ans](https://user-images.githubusercontent.com/81867200/188875254-c85ed25e-d17d-4d5a-a157-662187a1bec6.png)
+
