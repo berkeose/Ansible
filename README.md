@@ -56,3 +56,35 @@ Ağ oluşturmayı ana bilgisayarları veya sunucuları, işletim sistemlerini y�
 ### MEVCUTTA KULLANLAN TĞM SUNCULARIN IP ADRESLERİNİ GİRECEĞİZ.
 ![ans](https://user-images.githubusercontent.com/81867200/188875254-c85ed25e-d17d-4d5a-a157-662187a1bec6.png)
 
+
+ssh-keygen -t ed25519 -C "Ansible Anahtari"  anahtar oluşturma
+
+
+ssh-copy-id -i /home/theadmin/.ssh/ansible.pub  192.168.0.0 ---> buraya kopyala
+
+sudo apt install software-properties-common ---> ansible kurmadan önce indirilmeli
+
+sudo add-apt-repository --yes --update ppa:ansible/ansible --> ansible'in kurulumu için repository ekleme ve tanımlama işlemi
+
+sudo apt install ansible --> ansible kurulum
+
+ansible all --key-file ~/.ssh/ansible -i inventory -m ping  --> keyleri al dizinden inventorydekleri pingle komutu ( config dosyası oluşturursan oradan da aynı işlemi yaparsın ansible all -m ping yeterli olacaktır. )
+
+cat /etc/ansible/ansible.cfg ---> ansible'in kendi config dosyası
+
+ad-hoc commands --> bir veya birden fazla node'da tek bir görevi otomatikleştirmek için kullandıgımız komut satırı aracıdır (tek kullanımlıktır)
+
+ ansible all -a "/sbin/reboot" --become --ask-become-pass  --> reboot et ve yetki al yetki içinde passw sor 
+
+ ansible all -m apt -a name=hwinfo --become -K ---> bütün node'lara paket indirmek için kullanbilir (-K yukaridakinin kısaltımıdır). Ad-hoc commandleriyle playbookta yapabiliceğimiz herşeyi yapabiliriz.
+
+ cat /var/log/apt/history.log ---> logları kontrol etmek
+
+ git config --global user.name "BERKE KOSE" ---> git'e commit edebilmek için
+
+ ansible all -m apt -a "upgrade=dist" --become -K ---> Ansible ile envanterdeki tüm makinelerde apt-get dist-upgrade yap, ama bu işlemi sudo ile çalıştır ve sudo parolamı da sor.
+
+  ansible-playbook --ask-become-pass apche_yukleme.yml --> apche_yukleme.yml adlı Ansible playbook dosyasını çalıştır, işlemleri sudo (yani yönetici yetkisiyle) yapacağım için şifremi sor.
+
+
+
