@@ -86,5 +86,7 @@ ad-hoc commands --> bir veya birden fazla node'da tek bir görevi otomatikleşti
 
   ansible-playbook --ask-become-pass apche_yukleme.yml --> apche_yukleme.yml adlı Ansible playbook dosyasını çalıştır, işlemleri sudo (yani yönetici yetkisiyle) yapacağım için şifremi sor.
 
+  ansible all -m gather_facts --limit 192.168.0.102 | grep ansible_distribution --> burdan factleri çağır greple özel çağrı yapabiliriz.
+
 
 
